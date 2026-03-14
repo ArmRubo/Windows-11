@@ -1,0 +1,2555 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all .5s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+*::selection {
+    background: rgba(255, 255, 255, .00001);
+    color: #fff;
+}
+
+body {
+    background: #000;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 1;
+}
+
+body.active {
+    opacity: .3;
+}
+
+body.active2 {
+    background: rgb(146, 82, 14);
+    opacity: .7;
+}
+
+.loading {
+    position: relative;
+    width: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.power,
+.setup {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    top: 15rem;
+    transform: translateX(-50%);
+}
+
+.power .fa-power-off {
+    font-size: 6rem;
+    color: #f00;
+    background: #584b4b;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2rem #6f6b6b;
+}
+
+.power .fa-power-off:hover {
+    color: rgb(255, 72, 72);
+    background: #716060;
+    box-shadow: -.7rem .7rem 1.3rem #6f6b6b;
+}
+
+.power .span,
+.setup .span1 {
+    position: absolute;
+    font-size: 3rem;
+    color: #ccc;
+    width: 15rem;
+    top: -13rem;
+    left: -1.5rem;
+}
+
+.power span i {
+    position: absolute;
+    top: 6rem;
+    left: 4rem;
+    font-size: 4rem;
+}
+
+.setup {
+    top: 40rem;
+    left: -6rem;
+}
+
+.setup .span1 {
+    width: 20rem;
+    font-size: 3rem;
+    color: #f00;
+    background: #584b4b;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 2rem #6f6b6b;
+}
+
+.setup .span1:hover {
+    color: rgb(255, 72, 72);
+    background: #716060;
+    box-shadow: -.7rem .7rem 1.3rem #6f6b6b;
+}
+
+.winLoad {
+    z-index: -100;
+    width: 100%;
+    height: 99.58vh;
+    display: none;
+    background: #070707;
+}
+
+.winLoad img {
+    position: absolute;
+}
+
+.winLoad .win11 {
+    width: 10rem;
+    left: 50%;
+    top: 7rem;
+    transform: translateX(-50%);
+}
+
+.winLoad .loading {
+    top: 40rem;
+}
+
+.user {
+    display: none;
+}
+
+.user .wallpaper {
+    position: absolute;
+    background-size: cover;
+    z-index: -100;
+    width: 100%;
+    height: 54.9rem;
+    margin-top: -1.08rem;
+}
+
+.user .admin {
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 10rem;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+}
+
+.user span {
+    position: absolute;
+    color: #000;
+    -webkit-text-stroke: .5px #fff;
+    left: 89%;
+    top: 0;
+}
+
+.user form input {
+    position: absolute;
+    padding: .6rem 1.2rem;
+    font-size: 1.2rem;
+    border-radius: .3rem;
+    border: 2px solid #505050;
+    top: 23rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.user form input:focus {
+    border: 2px solid #000000;
+}
+
+.user form i {
+    position: relative;
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+    font-size: 1.5rem;
+    top: 23.8rem;
+    left: 53.7rem;
+    cursor: pointer;
+}
+
+.user form .fa-eye {
+    display: none;
+}
+
+.user form button {
+    position: absolute;
+    transform: translateX(-39%);
+    left: 61%;
+    top: 23rem;
+    padding: .5rem 1rem;
+    font-size: 1.4rem;
+    border-radius: .6rem;
+    border: 2px solid #000;
+    background: #ccc;
+}
+
+.user form button:hover {
+    background: #584b4b;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.user form button i {
+    position: relative;
+    left: 0;
+    top: 0;
+    color: #000;
+}
+
+.user form button:hover i {
+    color: #fff;
+}
+
+.user .password {
+    display: none;
+    position: absolute;
+    color: #f00;
+    font-size: 1.5rem;
+    top: 26.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.user .loading {
+    position: absolute;
+    margin-top: 26rem;
+    display: none;
+}
+
+
+/* -=-=-=-=-=-=-=-=-=- INDEX1.HTML -=-=-=-=-=-=-=-=-=- */
+
+
+.winWallpaper {
+    position: absolute;
+    z-index: -1000;
+    background-size: cover;
+    width: 96rem;
+    height: 54.9rem;
+    top: -1rem;
+}
+
+.question {
+    display: inline-block;
+    position: absolute;
+    background: #fff;
+    width: 250px;
+    height: 100px;
+    left: 50%;
+    top: 20rem;
+    transform: translateX(-50%);
+    border-radius: .5rem;
+    padding: .3rem;
+    z-index: 1000;
+}
+
+.question span {
+    position: relative;
+    font-size: 1.3rem;
+    left: .7rem;
+}
+
+.question .span {
+    display: none;
+    position: absolute;
+    color: #000;
+    font-size: 1.3rem;
+    background: #ccc;
+    left: 0;
+    top: 0;
+    padding: 2rem 1rem .5rem 1rem;
+    border-radius: .5rem;
+    width: 250px;
+    height: 100px;
+    text-align: center;
+}
+
+.btn {
+    border: 1px solid #999;
+    position: absolute;
+    top: 3rem;
+    font-size: 15px;
+    border-radius: .3rem;
+    padding: .3rem 1.5rem;
+    background: #ccc;
+    margin-left: 2rem;
+}
+
+.question .btn1 {
+    display: none;
+    left: 4.5rem;
+    top: 5rem;
+}
+
+#btn {
+    left: 50%;
+    top: 23rem;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.btn:hover {
+    background: #999;
+    color: #fff;
+}
+
+
+/*           RightClick                    */
+
+
+.wrapper {
+    display: none;
+    position: absolute;
+    width: 200px;
+    border-radius: 10px;
+    background: #222;
+    z-index: 1000;
+}
+
+.wrapper.active {
+    display: inline-block;
+}
+
+.content .item {
+    list-style: none;
+    font-size: 22px;
+    height: 50px;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.content .item:hover {
+    background: #444;
+}
+
+.content .item span {
+    margin-left: 8px;
+    font-size: 19px;
+    color: #fff;
+}
+
+.content .setting {
+    display: flex;
+    margin-top: -5px;
+    padding: 5px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~Taskbar~~~~~~~~~~~~~~~~~~~~ */
+
+.taskbar {
+    position: absolute;
+    width: 100%;
+    height: 3.7rem;
+    bottom: 0;
+    background: #00000030;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-radius: .5rem;
+}
+
+.taskbar .menu {
+    position: absolute;
+    display: inline-flex;
+    top: -.09rem;
+    left: 42%;
+    transform: translateX(-58%);
+    padding: .3rem .3rem .1rem .3rem;
+    border-radius: .3rem;
+}
+
+.taskbar .menu .menuLogo {
+    position: relative;
+    padding: .3rem .3rem .1rem .3rem;
+    border-radius: .5rem;
+    top: .11rem;
+}
+
+.taskbar .menuLogo:hover {
+    background: #66666666;
+}
+
+.taskbar .menu .menuLogo img {
+    border-radius: .3rem;
+    width: 2.5rem;
+    cursor: pointer;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~IconBox~~~~~~~~~~~~~~~~~~~~ */
+
+.taskbar .menu .iconBox {
+    position: absolute;
+    display: inline-flex;
+    left: 3rem;
+}
+
+.taskbar .menu .iconBox .icon {
+    position: relative;
+    width: 3rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    padding: .1rem .2rem 0 .2rem;
+    border-radius: .5rem;
+}
+
+.taskbar .menu .iconBox .icon.active {
+    background: #66666666;
+}
+
+.taskbar .menu .iconBox .icon:hover {
+    background: #66666666;
+}
+
+.taskbar .menu .iconBox .icon:first-child {
+    margin-left: .7rem;
+}
+
+.taskbar .menu .iconBox .icon:nth-child(2) {
+    margin-right: .2rem;
+}
+
+.taskbar .menu .icon img {
+    position: relative;
+    width: 3rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~MenuWindow~~~~~~~~~~~~~~~~~~~~ */
+
+.taskbar .menuWindow {
+    position: absolute;
+    width: 650px;
+    height: 600px;
+    top: 30rem;
+    left: 50%;
+    background: #05009aaa;
+    transform: translateX(-50%);
+    border-radius: .5rem;
+    z-index: -100;
+}
+
+.taskbar .menuWindow.active {
+    top: -39rem;
+}
+
+.taskbar .menuWindow .search {
+    display: inline-block;
+    position: absolute;
+    border: 5px solid #190f68;
+    background: #404040ad;
+    color: rgba(255, 0, 0, .8);
+    width: 96.4%;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    padding: .3rem 0;
+    font-weight: 500;
+    top: .5rem;
+    left: 1%;
+    -webkit-text-stroke: .7px #000;
+    cursor: default;
+}
+
+.taskbar .menuWindow .search i {
+    color: #ccc;
+    margin: 0 1.7rem;
+    font-size: 1.3rem;
+    -webkit-text-stroke: .1px #000;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~PinnedAppsDiv~~~~~~~~~~~~~~~~~~~~ */
+
+.taskbar .menuWindow .pinnedAppsDiv {
+    position: absolute;
+    display: inline-block;
+    top: 5rem;
+    width: 100%;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .text {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    left: 5rem;
+    font-size: 1.2rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps {
+    margin: 0 1.5rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app {
+    position: relative;
+    display: inline-flex;
+    gap: 1.3rem;
+    left: -.5rem;
+    width: 1rem;
+    margin-left: 4.3rem;
+    margin-top: 2.5rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app img {
+    width: 2rem;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app img:hover {
+    background: #66666666;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .storeImg {
+    height: 2rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~PinnedApps Span~~~~~~~~~~~~~~~~~~~~ */
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app span {
+    position: relative;
+    top: 3rem;
+    left: -4.5rem;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .edge {
+    left: -4rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .word {
+    left: -4rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .excel {
+    left: -4rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .powerpoint {
+    left: -5.3rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .mail {
+    left: -3.8rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .calendar {
+    left: -4.6rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .store {
+    left: -5rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .photos {
+    left: -4.4rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .onenote {
+    left: -4.6rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .calc {
+    left: -5rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .clock {
+    left: -4.1rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .paint {
+    left: -4rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .spotify {
+    left: -4.4rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .movies {
+    left: -4.4rem;
+}
+
+.taskbar .menuWindow .pinnedAppsDiv .pinnedApps .app .tips {
+    left: -3.8rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~Power~~~~~~~~~~~~~~~~~~~~ */
+
+.taskbar .menuWindow .power {
+    position: relative;
+    background: #040071e1;
+    width: 650px;
+    height: 3.5rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    top: 33.9rem;
+}
+
+.taskbar .menuWindow .power .userInfo {
+    position: relative;
+    display: inline-block;
+    height: 3.5rem;
+    width: 15rem;
+    left: 3rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+.taskbar .menuWindow .power .userInfo img {
+    position: relative;
+    width: 2.5rem;
+    top: .5rem;
+    cursor: pointer;
+}
+
+.taskbar .menuWindow .power .userInfo span {
+    position: relative;
+    font-size: 1rem;
+    top: -.4rem;
+    left: .7rem;
+}
+
+.taskbar .menuWindow .power .powerWinBtn {
+    display: inline-block;
+    position: relative;
+    left: 20rem;
+    padding: .4rem .5rem;
+    border-radius: 50%;
+}
+
+.taskbar .menuWindow .power .powerWinBtn:hover {
+    background: #190f68;
+}
+
+.taskbar .menuWindow .power .powerWinBtn img {
+    width: 1.6rem;
+    cursor: pointer;
+}
+
+.taskbar .menuWindow .power .powerWinBtn .powerWindow .restart {
+    top: .8rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~PowerWindow~~~~~~~~~~~~~~~~~~~~ */
+
+.taskbar .menuWindow .power .powerWinBtn .powerWindow {
+    position: absolute;
+    width: 200px;
+    height: 130px;
+    background: #05009ae1;
+    border: 1px solid #0f0c32;
+    top: -9rem;
+    left: 100rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.taskbar .menuWindow .power .powerWinBtn .powerWindow.active {
+    left: 4rem;
+}
+
+.taskbar .menuWindow .power .powerWinBtn .powerWindow span {
+    display: inline-block;
+    position: relative;
+    font-size: 2.19rem;
+    background: #0f0c32;
+    padding: .3rem .5rem;
+    border-radius: .5rem;
+    top: .4rem;
+    left: .4rem;
+    width: 170px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.taskbar .menuWindow .power .powerWinBtn .powerWindow span:hover {
+    background: #1b1741;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~Info~~~~~~~~~~~~~~~~~~~~ */
+
+.info {
+    position: absolute;
+    display: inline-flex;
+    right: 5rem;
+    top: 0;
+    height: 3.5rem;
+    width: 14rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~Trea~~~~~~~~~~~~~~~~~~~~ */
+
+.info .trea i {
+    position: relative;
+    font-size: 1.5rem;
+    top: .6rem;
+    cursor: pointer;
+    color: #fff;
+    padding: .5rem .3rem;
+    border-radius: .5rem;
+}
+
+.info .trea i:hover {
+    background: #190f68;
+}
+
+.info .trea #treaBtn.active {
+    transform: rotateZ(180deg);
+}
+
+.info .trea #treaWin {
+    display: inline-block;
+    position: absolute;
+    left: -2rem;
+    top: 20rem;
+    width: 6rem;
+    height: 6rem;
+    background: #05009aaa;
+    border-radius: .5rem;
+    z-index: -100;
+    flex-wrap: wrap;
+    backdrop-filter: blur(5px);
+}
+
+.info .trea #treaWin.active {
+    top: -7rem;
+}
+
+.info .trea #treaWin img {
+    border-radius: .5rem;
+    padding: .2rem 0;
+}
+
+.info .trea #treaWin .onedrive {
+    position: relative;
+    width: 3rem;
+    top: .4rem;
+    left: .1rem;
+}
+
+.info .trea #treaWin .defender {
+    position: absolute;
+    width: 2.5rem;
+    top: .1rem;
+    right: .3rem;
+    margin-left: .3rem;
+}
+
+.info .trea #treaWin .bluetooth {
+    position: relative;
+    width: 3rem;
+    height: 2.7rem;
+    top: .4rem;
+}
+
+.info .trea #treaWin img:hover {
+    background: #190f68;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~Language~~~~~~~~~~~~~~~~~~~~ */
+
+.info .language {
+    display: inline-block;
+    position: relative;
+    margin-left: .5rem;
+}
+
+.info .language #langBtn {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    top: 1.1rem;
+    cursor: pointer;
+    color: #fff;
+    padding: .9rem .3rem;
+    border-radius: .5rem;
+}
+
+.info .language #langBtn:hover {
+    background: #190f68;
+}
+
+.info .language #langWin {
+    position: absolute;
+    background: #05009aaa;
+    width: 22rem;
+    height: 18rem;
+    bottom: -20rem;
+    right: -9.5rem;
+    border-radius: .5rem;
+    border: 1px solid #0c054e;
+    z-index: -100;
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+.info #langWin.active {
+    bottom: 4.5rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~Text~~~~~~~~~~~~~~~~~~~~ */
+
+.info .language #langWin .text {
+    display: inline-flex;
+    background: #0c054e;
+    border-radius: .5rem .5rem 0 0;
+    width: 93.69%;
+    padding: 1.2rem .7rem;
+}
+
+.info .language #langWin .text .help {
+    position: absolute;
+    font-size: .7rem;
+    color: #9e9e9e;
+    left: 9rem;
+    top: 1.35rem;
+}
+
+.info .language #langWin .text .help img {
+    width: .8rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~LangBox~~~~~~~~~~~~~~~~~~~~ */
+
+.info .language #langWin .langBox {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 11.5rem;
+    background: #0c054e;
+}
+
+.info .language #langWin .langBox .line {
+    position: absolute;
+    width: .3rem;
+    height: 1.8rem;
+    background: rgb(36, 189, 255);
+    border-radius: .3rem;
+    left: .3rem;
+    top: 2rem;
+    z-index: 1001;
+}
+
+.info .language #langWin .langBox .line.active {
+    top: 8rem;
+}
+
+.info .language #langWin .langBox .lang {
+    position: absolute;
+    width: 100%;
+    height: 5.6rem;
+    border-radius: .3rem;
+    background: #0c054e;
+    padding-bottom: .1rem;
+    z-index: 1000;
+}
+
+.info .language #langWin .langBox .lang:hover {
+    background: #160d5b;
+}
+
+.info .language #langWin .langBox #nd {
+    top: 5.7rem;
+    margin-top: .3rem;
+}
+
+.info .language #langWin .langBox .lang.active {
+    border: 2px solid #fff;
+    background: #190f68;
+}
+
+.info .language #langWin .langBox .lang .langName {
+    position: absolute;
+    text-transform: uppercase;
+    top: 1.9rem;
+    left: 1rem;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.info .language #langWin .langBox .lang .name {
+    position: absolute;
+    text-transform: capitalize;
+    top: 1.8rem;
+    left: 3.7rem;
+    color: #fff;
+}
+
+.info .language #langWin .langBox .lang .country {
+    position: absolute;
+    color: #9e9e9e;
+    font-size: .9rem;
+    top: 3.1rem;
+    left: 3.7rem;
+    font-weight: 600;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~JokeBox~~~~~~~~~~~~~~~~~~~~ */
+
+.info .language #langWin .jokeBox {
+    position: absolute;
+    background: #0c054e;
+    bottom: -.1rem;
+    border-radius: 0 0 .5rem .5rem;
+    padding: .7rem;
+    width: 93.69%;
+    font-size: .8rem;
+    border-top: 2px solid #505050;
+}
+
+.info .language #langWin .jokeBox .setting {
+    cursor: pointer;
+}
+
+.info .language #langWin .jokeBox .setting.active {
+    text-decoration: line-through #f00;
+    cursor: wait;
+}
+
+.info .language #langWin .jokeBox .joke {
+    position: absolute;
+    display: none;
+    color: #f00;
+    font-size: 1rem;
+    cursor: default;
+    margin-left: 1rem;
+    margin-top: -.2rem;
+}
+
+.info .language #langWin .jokeBox .joke.active {
+    display: inline-block;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~WiFiBar~~~~~~~~~~~~~~~~~~~~ */
+
+.info .wifiBar {
+    display: inline-block;
+    position: absolute;
+}
+
+.info .wifiBar #WBBtn {
+    display: inline-flex;
+    position: absolute;
+    color: #fff;
+    padding: 1.1rem .5rem;
+    border-radius: .5rem;
+    top: .3rem;
+    left: 6rem;
+    cursor: pointer;
+}
+
+.info .wifiBar #WBBtn:hover {
+    background: #190f68;
+}
+
+.info .wifiBar #WBBtn .vvol,
+.info .wifiBar #WBBtn .vvol1,
+.info .wifiBar #WBBtn .vvol2,
+.info .wifiBar #WBBtn .vvol3 {
+    display: none;
+    margin: 0 .5rem;
+}
+
+.info .wifiBar #WBBtn .vvol.active,
+.info .wifiBar #WBBtn .vvol1.active,
+.info .wifiBar #WBBtn .vvol2.active,
+.info .wifiBar #WBBtn .vvol3.active {
+    display: inline-block;
+}
+
+.info .wifiBar #WBWin {
+    display: inline-flex;
+    position: absolute;
+    flex-wrap: wrap;
+    background: #05009aaa;
+    width: 21rem;
+    height: 24rem;
+    left: -3rem;
+    top: 10rem;
+    border-radius: .5rem;
+    z-index: -100;
+    backdrop-filter: blur(5px);
+}
+
+.info .wifiBar #WBWin.active {
+    top: -25rem;
+}
+
+.info .wifiBar #WBWin .WBMenu {
+    position: absolute;
+    width: 19.4rem;
+    margin: 0 .8rem 0 1.2rem;
+    top: 1rem;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn {
+    display: inline-block;
+    position: relative;
+    margin-right: .5rem;
+    width: 5.7rem;
+    height: 3.5rem;
+    border-radius: .5rem;
+    background: #0600c3;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn:hover {
+    background: #130ccc;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn:nth-child(3),
+.info .wifiBar #WBWin .WBMenu #WBMBtn:last-child {
+    margin-right: 0;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn:nth-child(4),
+.info .wifiBar #WBWin .WBMenu #WBMBtn:nth-child(5),
+.info .wifiBar #WBWin .WBMenu #WBMBtn:nth-child(6) {
+    margin-top: 3rem;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn.active {
+    background: #7975ff;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn.active i {
+    color: #000;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn i {
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 1.2rem;
+    transform: translateX(-50%);
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn img {
+    position: absolute;
+    width: 3rem;
+    left: 50%;
+    top: .3rem;
+    transform: translateX(-50%);
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn img.black {
+    display: none;
+    background: #7975ff;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn.active img.black {
+    display: inline-block;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn.active img.white {
+    display: inline-block;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn span {
+    position: absolute;
+    color: #fff;
+    font-size: .75rem;
+    top: 3.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5.7rem;
+    text-align: center;
+    letter-spacing: .1rem;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn.wifi span.callName,
+.info .wifiBar #WBWin .WBMenu #WBMBtn.BT span.callName {
+    display: inline-block;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn.wifi.active span.callName,
+.info .wifiBar #WBWin .WBMenu #WBMBtn.BT.active span.callName {
+    display: none;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn.wifi span.name,
+.info .wifiBar #WBWin .WBMenu #WBMBtn.BT span.name {
+    display: none;
+}
+
+.info .wifiBar #WBWin .WBMenu #WBMBtn.wifi.active span.name,
+.info .wifiBar #WBWin .WBMenu #WBMBtn.BT.active span.name {
+    display: inline-block;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~Range~~~~~~~~~~~~~~~~~~~~ */
+
+.info .wifiBar #WBWin .WBSlides {
+    position: absolute;
+    width: 100%;
+    bottom: 5rem;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    outline: none;
+    margin-top: 1rem;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin: .9rem;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide i {
+    position: absolute;
+    color: #fff;
+    top: .2rem;
+    left: -.3rem;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide .vol,
+.info .wifiBar #WBWin .WBSlides .WBSlide .vol1,
+.info .wifiBar #WBWin .WBSlides .WBSlide .vol2,
+.info .wifiBar #WBWin .WBSlides .WBSlide .vol3 {
+    display: none;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide .vol.active {
+    display: inline-block;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide .vol1.active {
+    display: inline-block;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide .vol2.active {
+    display: inline-block;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide .vol3.active {
+    display: inline-block;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.info .wifiBar #WBWin .WBSlides .WBSlide input {
+    position: relative;
+    width: 85%;
+    left: 1.2rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~NotBar~~~~~~~~~~~~~~~~~~~~ */
+
+.info .notBar {
+    position: absolute;
+}
+
+.info .notBar #notBtn {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    left: 12rem;
+    top: .25rem;
+    padding: .25rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.info .notBar #notBtn:hover {
+    background: #190f68;
+}
+
+.info .notBar #notWin {
+    display: inline-block;
+    position: absolute;
+    width: 18rem;
+    height: 90vh;
+    border-radius: .5rem;
+    bottom: 1rem;
+    right: -40rem;
+}
+
+.info .notBar #notWin.active {
+    right: -18.5rem;
+}
+
+.info .notBar #notWin #date .dateSpan {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #04007c;
+    display: inline-block;
+    border-radius: 0 0 .5rem .5rem;
+    padding: .6rem 0 .6rem 1.5rem;
+    width: 91.5%;
+    font-size: .9rem;
+}
+
+.info .notBar #notWin #nots {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    bottom: 3rem;
+    border-radius: .5rem;
+    height: auto;
+}
+
+.info .notBar #notWin #nots .notSpan {
+    position: relative;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #04007c;
+    display: inline-block;
+    border-radius: .5rem .5rem 0 0;
+    padding: .6rem 0 .6rem 1.5rem;
+    width: 91.5%;
+    font-size: .9rem;
+}
+
+.info .notBar #notWin #nots .not {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background: #05009aaa;
+    border-bottom: 1px solid #666;
+    backdrop-filter: blur(5px);
+}
+
+.info .notBar #notWin #nots .not.active {
+    margin-left: 20rem;
+}
+
+.info .notBar #notWin #nots .not .logo {
+    width: 2rem;
+    display: inline-flex;
+}
+
+.info .notBar #notWin #nots .not .logo span {
+    position: relative;
+    font-size: .8rem;
+    color: #fff;
+    top: .5rem;
+    font-weight: 100;
+    letter-spacing: .05rem;
+}
+
+.info .notBar #notWin #nots .not .logo img {
+    width: 100%;
+}
+
+.info .notBar #notWin #nots .not .time {
+    position: relative;
+    font-size: .8rem;
+    color: #fff;
+    top: 1.4rem;
+    left: -2rem;
+}
+
+.info .notBar #notWin #nots .not .pupil {
+    margin-top: .8rem;
+}
+
+.info .notBar #notWin #nots .not .pupil img {
+    width: 3rem;
+    margin-top: 1rem;
+    border-radius: 50%;
+}
+
+.info .notBar #notWin #nots .not .pupil span {
+    position: relative;
+    font-size: .8rem;
+    color: #fff;
+    left: 0;
+    top: -2.3rem;
+    -webkit-text-stroke: .2px #ccc;
+}
+
+.info .notBar #notWin #nots .not .pupil .name.active {
+    display: none;
+}
+
+.info .notBar #notWin #nots .not .pupil .name1 {
+    display: none;
+}
+
+.info .notBar #notWin #nots .not .pupil .name1.active {
+    display: inline-block;
+}
+
+.info .notBar #notWin #nots .not .letter button {
+    position: absolute;
+    color: #fff;
+    background: #333;
+    padding: .2rem .5rem;
+    border-radius: .5rem;
+    bottom: 6.5rem;
+    right: 3rem;
+}
+
+.info .notBar #notWin #nots .not .letter .translate.active {
+    display: none;
+}
+
+.info .notBar #notWin #nots .not .letter .translate1 {
+    display: none;
+    bottom: 8.5rem;
+}
+
+.info .notBar #notWin #nots .not .letter .translate1.active {
+    display: inline-block;
+}
+
+.info .notBar #notWin #nots .not .letter button:hover {
+    background: #222;
+    color: #ccc;
+}
+
+.info .notBar #notWin #nots .not .letter p {
+    position: relative;
+    font-size: .8rem;
+    color: #ccc;
+    display: inline-block;
+    width: 80%;
+    left: 18.5%;
+    top: -2rem;
+}
+
+.info .notBar #notWin #nots .not .letter .eng {
+    display: block;
+}
+
+.info .notBar #notWin #nots .not .letter .eng.active {
+    display: none;
+}
+
+.info .notBar #notWin #nots .not .letter .arm {
+    display: block;
+}
+
+.info .notBar #notWin #nots .not .letter .arm.active {
+    display: none;
+}
+
+.info .notBar #notWin #nots .not .letter .close {
+    right: 1rem;
+    color: #f00;
+}
+
+.info .notBar #notWin #nots .not .letter .close.active {
+    bottom: 8.5rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~Shut and Restart~~~~~~~~~~~~~~~~~~~~ */
+
+.shutres {
+    position: absolute;
+    display: inline-block;
+    background: #111;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+.shutres .loading {
+    top: 27rem;
+    width: 6rem;
+}
+
+.shutres p {
+    position: absolute;
+    color: #fff;
+    font-size: 3rem;
+    left: 50%;
+    top: 17rem;
+    transform: translateX(-50%);
+}
+
+.shut {
+    display: none;
+}
+
+.restart {
+    display: none;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-Windows-=-=-=-=-=-=-=-=-=-=-=- */
+
+.window {
+    display: none;
+    position: absolute;
+    background: #999;
+    width: 100%;
+    height: 93.11vh;
+    border-radius: .5rem;
+    z-index: 2;
+    left: 0;
+    top: 0;
+}
+
+.window.active {
+    display: inline-block;
+    margin-top: 0;
+    animation: windowOpen .7s 1 ease-in-out;
+}
+
+.window.active2 {
+    width: 70%;
+    height: 63.11vh;
+    left: 50%;
+    top: 10rem;
+    transform: translateX(-50%);
+}
+
+.action {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    z-index: 101;
+    top: 0;
+}
+
+.action div {
+    padding: .5rem 1.1rem;
+    background: #333;
+}
+
+.action div:hover {
+    background: #555;
+}
+
+.action div:last-child {
+    border-radius: 0 .5rem 0 0;
+}
+
+.action div:last-child:hover {
+    background: #f00;
+}
+
+.action div i {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+
+/* ==================== ChromeWindow ==================== */
+
+
+#chromeWindow .tabs {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 2.45rem;
+    z-index: 0;
+    background: #120ccc;
+    border-radius: .5rem .5rem 0 0;
+}
+
+#chromeWindow .tabs .tab {
+    position: absolute;
+    display: inline-flex;
+    background: #fff;
+    width: 10rem;
+    height: 2.1rem;
+    bottom: 0;
+    left: .8rem;
+    border-radius: .3rem .3rem 0 0;
+}
+
+#chromeWindow .tabs .tab .icon {
+    position: relative;
+    left: .3rem;
+    top: .3rem;
+}
+
+#chromeWindow .tabs .tab .icon img {
+    width: 1.3rem;
+}
+
+#chromeWindow .tabs .tab span {
+    position: relative;
+    left: .6rem;
+    top: .3rem;
+    font-size: .9rem;
+}
+
+#chromeWindow .tabs .tab button {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    font-size: .9rem;
+    right: .5rem;
+    top: .3rem;
+    z-index: 1000;
+}
+
+#chromeWindow .tabs .tab button:hover {
+    background: #ccc;
+}
+
+#chromeWindow .panel {
+    position: absolute;
+    top: 2.5rem;
+    width: 100%;
+}
+
+#chromeWindow .panel .icons {
+    position: relative;
+    display: inline-block;
+}
+
+#chromeWindow .panel .icons i {
+    background: none;
+    color: #fff;
+    padding: .4rem;
+    border-radius: 50%;
+}
+
+#chromeWindow .panel .icons i:hover {
+    background: #dedede66;
+}
+
+#chromeWindow .panel .searchInput {
+    border-radius: 2rem;
+    padding: 0 1.5rem;
+    height: 1.8rem;
+    width: 85%;
+    margin-left: 1rem;
+    background: #666;
+    color: #fff;
+}
+
+#chromeWindow .panel .searchInput::placeholder {
+    color: #fff;
+}
+
+#chromeWindow .panel a {
+    cursor: pointer;
+}
+
+#chromeWindow .panel img {
+    position: absolute;
+    width: 2rem;
+    border-radius: 50%;
+    top: -.05rem;
+    right: 2.5rem;
+}
+
+#chromeWindow .panel .menu {
+    position: absolute;
+    background: none;
+    color: #fff;
+    right: .7rem;
+    top: .15rem;
+    font-size: 1.2rem;
+    padding: .2rem .7rem;
+    border-radius: 50%;
+}
+
+#chromeWindow .panel .menu:hover {
+    background: #dedede66;
+}
+
+#chromeWindow .text {
+    position: absolute;
+    width: 17rem;
+    left: 50%;
+    top: 16rem;
+    transform: translateX(-50%);
+}
+
+#chromeWindow form {
+    position: absolute;
+    display: inline-block;
+    box-shadow: 0 0 .4rem #999;
+    left: 50%;
+    top: 23rem;
+    transform: translateX(-50%);
+    width: 22rem;
+    height: 2rem;
+    border-radius: 2rem;
+}
+
+#chromeWindow form.active {
+    box-shadow: none;
+    border-radius: 2rem 2rem 0 0;
+}
+
+#chromeWindow form button {
+    position: relative;
+    border-radius: 2rem 0 0 2rem;
+    height: 100%;
+    width: 1.5rem;
+    background: #fff;
+    padding-left: .5rem;
+    display: inline-block;
+}
+
+#chromeWindow form button:hover {
+    background: #dedede;
+}
+
+#chromeWindow form #magGlass.active {
+    border-radius: 2rem 0 0 0;
+}
+
+.searchInput {
+    position: absolute;
+    padding: 0 .5rem;
+    width: 18rem;
+    height: 2rem;
+}
+
+#chromeWindow form .mic {
+    position: absolute;
+    border-radius: 0 2rem 2rem 0;
+    top: 0;
+    right: 0;
+}
+
+#chromeWindow form .mic.active {
+    border-radius: 0 2rem 0 0;
+}
+
+#chromeWindow form .mic img {
+    position: absolute;
+    width: .8rem;
+    left: .3rem;
+    top: .5rem;
+}
+
+#chromeWindow #hints {
+    display: none;
+    position: absolute;
+    width: 22rem;
+    height: 4rem;
+    left: 50%;
+    top: 25rem;
+    transform: translateX(-50%);
+    border-radius: 0 0 2rem 2rem;
+    background: #fff;
+}
+
+#chromeWindow #hints.active {
+    display: inline-block;
+}
+
+#chromeWindow #hints .hint {
+    background: #fff;
+    height: 2rem;
+    cursor: pointer;
+}
+
+#chromeWindow #hints .hint:hover {
+    background: #dedede;
+}
+
+#chromeWindow #hints .hint i {
+    position: absolute;
+    left: 1rem;
+    top: .6rem;
+    font-size: .9rem;
+    color: #333;
+}
+
+#chromeWindow #hints .hint span {
+    position: absolute;
+    font-size: .9rem;
+    left: 3rem;
+    top: .45rem;
+}
+
+
+/* ==================== SettingsWindow ==================== */
+
+
+#settingsWindow {
+    background: #222;
+}
+
+#settingsWindow .account {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: inline-block;
+}
+
+#settingsWindow .account img {
+    width: 8rem;
+    border-radius: 50%;
+}
+
+#settingsWindow .account span {
+    position: relative;
+    color: #fff;
+    font-size: 1.7rem;
+    left: 3rem;
+    top: -5rem;
+}
+
+#settingsWindow .account .mail {
+    font-size: 1.3rem;
+    left: 9rem;
+}
+
+#settingsWindow .settingsBar {
+    position: relative;
+    display: inline-block;
+    top: 15rem;
+    left: 4rem;
+}
+
+#settingsWindow .settingsBar .setting {
+    position: relative;
+    border-radius: .7rem;
+    width: 20rem;
+    margin: -.6rem 0;
+    padding: .3rem .4rem;
+    cursor: pointer;
+}
+
+#settingsWindow .settingsBar .setting:hover {
+    background: #66666666;
+}
+
+#settingsWindow .settingsBar .setting i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #1e86a2;
+}
+
+#settingsWindow .settingsBar .setting span {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-left: .5rem;
+}
+
+#settingsWindow .settingsBar .line {
+    position: absolute;
+    background: #0600c3;
+    width: .4rem;
+    height: 1.6rem;
+    border-radius: 2rem;
+    top: 7.3rem;
+    left: 0;
+    z-index: 1000;
+}
+
+#settingsWindow .settingsBar .person {
+    background: #77777777;
+}
+
+#settingsWindow h1 {
+    display: inline-block;
+    position: absolute;
+    color: #fff;
+    font-weight: normal;
+    top: 4rem;
+    left: 33rem;
+}
+
+#settingsWindow .show {
+    position: absolute;
+    left: 33rem;
+    top: 8rem;
+}
+
+#settingsWindow .show img {
+    display: none;
+    border: 10px solid;
+    width: 30rem;
+    height: 18rem;
+    border-radius: .5rem;
+    border-bottom: 25px ridge #000;
+}
+
+#settingsWindow .show img:first-child {
+    display: inline-block;
+}
+
+#settingsWindow h3 {
+    position: absolute;
+    color: #fff;
+    font-weight: normal;
+    left: 33rem;
+    top: 29rem;
+}
+
+#settingsWindow .themes {
+    position: absolute;
+    display: inline-block;
+    left: 32.8rem;
+    top: 32rem;
+}
+
+#settingsWindow .themes .theme {
+    position: relative;
+    display: inline-block;
+    margin: .2rem;
+    cursor: pointer;
+}
+
+#settingsWindow .themes .theme img {
+    width: 13rem;
+    height: 8rem;
+    border-radius: .5rem;
+    border: 1px solid #222;
+}
+
+#settingsWindow .themes .theme img:hover {
+    filter: opacity(50%);
+    border: 1px solid #fff;
+}
+
+#settingsWindow .themes .theme img.active {
+    border: 1px solid #fff;
+}
+
+#settingsWindow .themes .theme img.active:hover {
+    filter: opacity(70%);
+}
+
+/*             When SettingsWindow is active2               */
+
+#settingsWindow.active2 .account img {
+    width: 6rem;
+}
+
+#settingsWindow.active2 .account span {
+    font-size: 1.4rem;
+    top: -3.5rem;
+    left: 2rem;
+}
+
+#settingsWindow.active2 .account .mail {
+    font-size: 1.1rem;
+    left: 6.5rem;
+}
+
+#settingsWindow.active2 .settingsBar {
+    top: 11rem;
+}
+
+#settingsWindow.active2 .settingsBar .setting {
+    padding: .2rem .4rem;
+    width: 19rem;
+}
+
+#settingsWindow.active2 .settingsBar .setting i {
+    font-size: 1.3rem;
+}
+
+#settingsWindow.active2 .settingsBar .setting span {
+    font-size: 1.1rem;
+}
+
+#settingsWindow.active2 .settingsBar .line {
+    width: .3rem;
+    height: 1.4rem;
+    top: 5.8rem;
+}
+
+#settingsWindow.active2 h1 {
+    left: 26rem;
+    top: 3rem;
+    font-size: 1.4rem;
+}
+
+#settingsWindow.active2 .show {
+    left: 26rem;
+    top: 5.5rem;
+}
+
+#settingsWindow.active2 .show img {
+    width: 18rem;
+    height: 11rem;
+}
+
+#settingsWindow.active2 h3 {
+    font-size: 1rem;
+    left: 26rem;
+    top: 19rem;
+}
+
+#settingsWindow.active2 .themes {
+    left: 25.8rem;
+    top: 20.7rem;
+}
+
+#settingsWindow.active2 .themes .theme {
+    margin: .1rem;
+}
+
+#settingsWindow.active2 .themes .theme img {
+    width: 10rem;
+    height: 6rem;
+}
+
+
+/* ==================== ExplorerWindow ==================== */
+
+
+#explorerWindow {
+    background: #333;
+}
+
+#explorerWindow .header {
+    position: absolute;
+    color: #fff;
+    left: 0;
+    top: -.3rem;
+    width: 10rem;
+    height: 1rem;
+}
+
+#explorerWindow .header img {
+    position: relative;
+    width: 1.5rem;
+    padding-right: .3rem;
+    top: .4rem;
+    left: .1rem;
+}
+
+#explorerWindow .explorerBar {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 1.5rem;
+    top: 2rem;
+}
+
+#explorerWindow .explorerBar i {
+    position: relative;
+    color: #fff;
+    margin-left: .3rem;
+    padding: .5rem;
+    border-radius: .3rem;
+}
+
+#explorerWindow .explorerBar i:hover {
+    background: #66666666;
+}
+
+#explorerWindow .explorerBar .input {
+    border: 1px solid #777;
+    display: inline-flex;
+    position: relative;
+    top: -2.2rem;
+    left: 10rem;
+    width: 65rem;
+    height: 1.5rem;
+    color: #fff;
+    padding: .4rem;
+}
+
+#explorerWindow .explorerBar .input img {
+    position: absolute;
+    width: 1.7rem;
+    height: 1.7rem;
+    top: .3rem;
+    left: .2rem;
+}
+
+#explorerWindow .explorerBar .input i {
+    margin-left: 1.5rem;
+    top: -.2rem;
+}
+
+#explorerWindow .explorerBar .input i:last-child {
+    margin: .2rem;
+    top: -.4rem;
+}
+
+#explorerWindow .explorerBar .input .icons1 {
+    position: relative;
+    left: 50rem;
+}
+
+#explorerWindow .explorerBar .input .icons1 i:first-child {
+    top: -.4rem;
+}
+
+#explorerWindow .explorerBar input {
+    border: 1px solid #777;
+    position: absolute;
+    background: none;
+    padding: .6rem;
+    top: -.2rem;
+    left: 76.5rem;
+    width: 17.5rem;
+    color: #fff;
+}
+
+#explorerWindow .quickBar {
+    display: list-item;
+    position: absolute;
+    width: 11rem;
+    top: 7rem;
+    left: 0;
+    border-right: 1px solid #777;
+}
+
+#explorerWindow .quickBar::marker {
+    color: rgba(255, 255, 255, 0);
+}
+
+#explorerWindow .quickBar .quickArea {
+    position: relative;
+    margin: .5rem 0;
+    padding: .2rem 0 .2rem 1.4rem;
+    border-radius: .5rem;
+    width: 9.5rem;
+    cursor: pointer;
+}
+
+#explorerWindow .quickBar .quickArea.active {
+    background: #77777788;
+}
+
+#explorerWindow .quickBar .quickArea:hover {
+    background: #66666666;
+}
+
+#explorerWindow .quickBar .quickArea:first-child,
+#explorerWindow .quickBar .quickArea:nth-child(8),
+#explorerWindow .quickBar .quickArea:nth-child(9) {
+    left: 0;
+}
+
+#explorerWindow .quickBar .quickArea i {
+    margin-left: .3rem;
+    color: #1e86a2;
+}
+
+#explorerWindow .quickBar .quickArea:nth-child(3) i:first-child {
+    color: #32dd32;
+}
+
+#explorerWindow .quickBar .quickArea:nth-child(4) i:first-child {
+    color: #fff;
+}
+
+#explorerWindow .quickBar .quickArea:nth-child(6) i:first-child {
+    color: #f00;
+}
+
+#explorerWindow .quickBar .quickArea:nth-child(7) i:first-child {
+    color: #cc42d6;
+}
+
+#explorerWindow .quickBar .quickArea .fa-angle-down {
+    padding: .3rem;
+    border-radius: .5rem;
+}
+
+#explorerWindow .quickBar .quickArea .fa-angle-down:hover {
+    background: #77777755;
+}
+
+#explorerWindow .quickBar .quickArea:first-child i:first-child,
+#explorerWindow .quickBar .quickArea:nth-child(8) i:first-child,
+#explorerWindow .quickBar .quickArea:nth-child(9) i:first-child {
+    color: #fff;
+}
+
+#explorerWindow .quickBar .quickArea:first-child i:nth-child(2) {
+    color: #ff0;
+}
+
+#explorerWindow .quickBar .quickArea:nth-child(2) i:last-child,
+#explorerWindow .quickBar .quickArea:nth-child(3) i:last-child,
+#explorerWindow .quickBar .quickArea:nth-child(4) i:last-child,
+#explorerWindow .quickBar .quickArea:nth-child(5) i:last-child {
+    color: #999;
+}
+
+#explorerWindow .quickBar .quickArea span {
+    position: relative;
+    color: #fff;
+    left: .2rem;
+}
+
+.fa-thumbtack {
+    color: #999;
+    font-size: .8rem;
+    transform: rotate(40deg);
+}
+
+#explorerWindow .body {
+    display: inline-block;
+    position: absolute;
+    left: 13rem;
+    top: 6rem;
+    width: 44rem;
+}
+
+#explorerWindow .body .elem {
+    display: inline-flex;
+    position: relative;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: .5rem;
+    margin: .7rem .3rem;
+    width: 11rem;
+}
+
+#explorerWindow .body .elem:hover {
+    background: #66666666;
+}
+
+#explorerWindow .body .elem i {
+    position: relative;
+    color: #999;
+    font-size: .9rem;
+    top: 1rem;
+}
+
+#explorerWindow .body .elem:first-child i:first-child {
+    color: #146464;
+}
+
+#explorerWindow .body .elem i.fa-thumbtack {
+    left: -3.5rem;
+}
+
+#explorerWindow .body .elem img {
+    position: relative;
+    width: 3.5rem;
+    top: 0;
+    left: .5rem;
+}
+
+#explorerWindow .body .elem span {
+    position: relative;
+    color: #fff;
+    left: .5rem;
+    top: -.4rem;
+}
+
+#explorerWindow .body .elem:nth-child(2) {
+    top: 2rem;
+}
+
+#explorerWindow .body .elem:nth-child(2) i {
+    left: -5rem;
+}
+
+#explorerWindow .body .elem:nth-child(3) i:last-child {
+    left: -5rem;
+}
+
+#explorerWindow .body .elem:nth-child(4) {
+    top: -2.5rem;
+}
+
+#explorerWindow .body .elem:nth-child(5) {
+    top: -.5rem;
+}
+
+#explorerWindow .body .elem:nth-child(6) {
+    top: -.5rem;
+}
+
+#explorerWindow .body .elem:nth-child(6) img {
+    left: 1.8rem;
+}
+
+#explorerWindow .body .elem:nth-child(6) span {
+    left: 1.9rem;
+}
+
+#explorerWindow .body .disk {
+    position: absolute;
+    padding: .4rem;
+    border-radius: .5rem;
+    width: 15rem;
+    cursor: pointer;
+    padding-bottom: .7rem;
+}
+
+#explorerWindow .body .disk:hover {
+    background: #66666666;
+}
+
+#explorerWindow .body .disk img {
+    width: 3rem;
+}
+
+#explorerWindow .body .disk span {
+    position: relative;
+    color: #fff;
+    top: -2rem;
+}
+
+#explorerWindow .body .disk .progBar {
+    border: 1px solid #666;
+    position: absolute;
+    background: #ccc;
+    width: 10rem;
+    height: .7rem;
+    top: 1.7rem;
+    left: 4rem;
+}
+
+#explorerWindow .body .disk .progBlue {
+    position: absolute;
+    background: #0600c3;
+    width: 3rem;
+    height: .8rem;
+    top: 1.7rem;
+    left: 4rem;
+}
+
+#explorerWindow .body .disk .free {
+    position: absolute;
+    top: 2.5rem;
+    left: 4rem;
+}
+
+#explorerWindow .body #propertiesBtn {
+    display: none;
+    position: relative;
+    width: 200px;
+    height: 1.5rem;
+    background: #222;
+    padding: .6rem;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 1000;
+    left: 14.5rem;
+    top: 3rem;
+}
+
+#explorerWindow .body #propertiesBtn.active {
+    display: inline-block;
+}
+
+#explorerWindow .body #propertiesBtn span {
+    position: relative;
+    top: -.35rem;
+    left: -.3rem;
+    color: #fff;
+    font-size: 18px;
+    height: 35px;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+#explorerWindow .body #propertiesBtn span:hover {
+    background: #444;
+}
+
+#explorerWindow .body #properties {
+    display: none;
+    position: absolute;
+    width: 20rem;
+    height: 30rem;
+    border-radius: .5rem;
+    background: #fff;
+    border-bottom: 30px solid #ccc;
+}
+
+#explorerWindow .body #properties.active {
+    display: inline-block;
+}
+
+#explorerWindow .body #properties .name {
+    display: inline-block;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    background: #444;
+    padding: .2rem 4.7rem .4rem .2rem;
+    border-radius: .4rem 0 0 0;
+}
+
+#explorerWindow .body #properties .name img {
+    width: 1.8rem;
+    position: absolute;
+    top: .2rem;
+    left: .2rem;
+    z-index: 1000;
+}
+
+#explorerWindow .body #properties .name span {
+    color: #fff;
+    margin-left: 2rem;
+}
+
+#explorerWindow .body #properties .action {
+    border-radius: 0 .4rem 0 0;
+}
+
+#explorerWindow .body #properties .action #close3 {
+    padding: .3rem .9rem;
+    background: #444;
+}
+
+#explorerWindow .body #properties .action #close3:hover {
+    background: #f00;
+}
+
+#explorerWindow .body #properties img {
+    position: absolute;
+    width: 20rem;
+    left: 0;
+    top: 2rem;
+}
+
+#explorerWindow .body #properties .diskC {
+    position: absolute;
+    width: 2.2rem;
+    top: 5rem;
+    left: 1rem;
+}
+
+#explorerWindow .body #properties .txt {
+    display: inline-block;
+    position: absolute;
+    width: 14rem;
+    height: 1.5rem;
+    top: 5.1rem;
+    right: 1rem;
+    border-radius: .2rem;
+    border: .5px solid #ccc;
+    border-bottom: 1px solid #111;
+}
+
+#explorerWindow .body #properties .type {
+    position: relative;
+    top: 8rem;
+    left: .2rem;
+    color: #000;
+    font-size: .8rem;
+}
+
+#explorerWindow .body #properties .subInfo {
+    display: inline-block;
+    position: absolute;
+    left: 1rem;
+    top: 11rem;
+    color: #000;
+    font-size: .8rem;
+}
+
+#explorerWindow .body #properties .subInfo .square {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: rgb(0, 179, 255);
+    left: -1.2rem;
+}
+
+#explorerWindow .body #properties .free {
+    top: 12.5rem;
+}
+
+#explorerWindow .body #properties .free .square {
+    background: #acacac;
+}
+
+#explorerWindow .body #properties .capacity {
+    left: 1rem;
+    top: 14.5rem;
+}
+
+#explorerWindow .body #properties .diskMemory {
+    position: absolute;
+    width: 3.5rem;
+    border-radius: 50%;
+    left: 60%;
+    transform: translateX(-40%);
+    top: 16rem;
+}
+
+#explorerWindow .body #properties .drive {
+    position: absolute;
+    left: 60%;
+    transform: translateX(-40%);
+    top: 20rem;
+    color: #000;
+    font-size: .8rem;
+}
+
+#explorerWindow .body #properties form .check {
+    display: inline-block;
+    position: absolute;
+    color: #000;
+    font-size: .8rem;
+    width: 19rem;
+    left: 0;
+    top: 22.5rem;
+}
+
+#explorerWindow .body #properties form .check2 {
+    top: 24rem;
+}
+
+#explorerWindow .body #properties .action2 {
+    display: inline-block;
+    position: absolute;
+    bottom: -28.1rem;
+    right: -4.5rem;
+    margin-left: .5rem;
+}
+
+#explorerWindow .body #properties .action2 button {
+    padding: .1rem 1rem;
+    border-radius: .3rem;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #868686;
+    cursor: pointer;
+}
+
+#explorerWindow .body #properties .action2 button:nth-child(1):hover {
+    background: #bcbcbc;
+    border: 1px solid #fff;
+}
+
+#explorerWindow .body #properties .action2 button:nth-child(2):hover {
+    background: #bcbcbc;
+    border: 1px solid #fff;
+}
+
+
+/*                   When explorerWindow is active2                    */
+
+
+#explorerWindow.active2 .explorerBar .input {
+    width: 36rem;
+}
+
+#explorerWindow.active2 .explorerBar .input .icons1 {
+    left: 21rem;
+}
+
+#explorerWindow.active2 .explorerBar input {
+    left: 47.5rem;
+}
+
+#explorerWindow.active2 #properties {
+    margin-left: -30rem;
+    margin-top: -10rem;
+}
+
+
+/*                  Desktop                   */
+
+
+#desktop {
+    position: absolute;
+    display: inline-block;
+    width: 99.9%;
+    height: 93vh;
+}
+
+#desktop .icon {
+    position: relative;
+    display: inline-block;
+    left: .6rem;
+    top: .6rem;
+    padding: .3rem;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+#desktop .icon:hover {
+    background: #66666666;
+}
+
+#desktop .icon img {
+    width: 4rem;
+}
+
+#desktop .icon span {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    left: .2rem;
+}
+
+#desktop #explorerApp span {
+    position: absolute;
+    top: 4.5rem;
+    left: .6rem;
+}
+
+/*                         Animations                     */
+
+@keyframes windowOpen {
+    0% {
+        width: 100px;
+        height: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20rem;
+    }
+
+    25% {
+        width: 300px;
+        height: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20rem;
+    }
+
+    50% {
+        width: 700px;
+        height: 350px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20rem;
+    }
+
+    75% {
+        width: 1000px;
+        height: 500px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20rem;
+    }
+
+    100% {
+        width: 100%;
+        height: 63.11vh;
+        left: 0;
+        transform: none;
+    }
+}

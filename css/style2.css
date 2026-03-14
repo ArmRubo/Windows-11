@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all .5s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+*::selection {
+    background: rgba(255, 255, 255, .00001);
+    color: #fff;
+}
+
+body {
+    background: #dae6f1;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 1;
+}
+
+
+/* ==================== ACTION ==================== */
+
+
+#action {
+    display: inline-block;
+    position: absolute;
+    width: 80rem;
+    height: 40rem;
+    background: #edf3ff;
+    box-shadow: 0 0 1.3rem #c2cddc;
+    border-radius: .7rem;
+    left: 50%;
+    top: 12.7%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+#action .inAction {
+    display: none;
+    position: relative;
+    width: 80rem;
+    height: 40rem;
+    border-radius: .7rem;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=- KEYBOARD -=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+#action #keyboard {
+    display: inline-block;
+}
+
+#action #keyboard #keyboardvid {
+    display: inline-block;
+    position: relative;
+    width: 28rem;
+    top: 28%;
+    left: 10%;
+    z-index: 1000;
+}
+
+#action #keyboard .head {
+    position: absolute;
+    right: 0;
+    font-size: 1.8rem;
+    text-align: left;
+    margin: 4rem 3rem 0 0;
+    font-weight: 600;
+}
+
+#action #keyboard .txt {
+    position: absolute;
+    right: 0;
+    font-size: 1.1rem;
+    text-align: left;
+    margin: 10rem 3.5rem 0 0;
+    color: #555;
+}
+
+#action #keyboard #option {
+    display: inline-block;
+    position: absolute;
+    right: 4.2rem;
+    top: 38%;
+}
+
+#action #keyboard #option .select {
+    position: relative;
+    text-align: left;
+    border-radius: .3rem;
+    padding: 1.3rem 20rem 1.3rem 1rem;
+    cursor: pointer;
+}
+
+#action #keyboard #option .select:hover {
+    background: #d4d8e0;
+}
+
+#action #keyboard #option .select.active {
+    background: #0063c7;
+    color: #fff;
+}
+
+#action #keyboard #option .select.active:hover {
+    background: #003b98;
+}
+
+#action #keyboard #yes {
+    position: absolute;
+    display: inline-block;
+    background: #0063c7;
+    color: #fff;
+    bottom: 8rem;
+    right: 4.2rem;
+    padding: .7rem 5rem;
+    border-radius: .6rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#action #keyboard #yes:hover {
+    background: #003b98;
+}
+
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=- UPDATES -=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+
+#action #updates img {
+    position: absolute;
+    left: 10%;
+    top: 32%;
+    border-radius: 3rem;
+}
+
+#action #updates #vdLoad {
+    display: inline-block;
+    position: absolute;
+    left: 69%;
+    top: 28%;
+    width: 18rem;
+}
+
+#action .spans {
+    display: inline-block;
+    position: absolute;
+    right: 7%;
+    text-align: center;
+    top: 60%;
+    width: 20rem;
+}
+
+#action .spans .txt {
+    display: none;
+    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#action .spans #txt1 {
+    display: inline-block;
+}
+
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=- ACCOUNT -=-=-=-=-=-=-=-=-=-=-=-=-=- */
+
+
+#action #account {
+    display: inline-block;
+}
+
+#action #account img {
+    display: inline-block;
+    position: absolute;
+    left: 8%;
+    top: 32%;
+    border-radius: 3rem;
+    width: 18rem;
+}

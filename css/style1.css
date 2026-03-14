@@ -1,0 +1,662 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all .5s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+*::selection {
+    background: rgba(255, 255, 255, .00001);
+    color: #fff;
+}
+
+body {
+    background: #1b0656;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 1;
+}
+
+
+/*                     Windows 11 Setup                      */
+
+
+.action {
+    display: inline-block;
+    position: absolute;
+    background: #b2cae9;
+    border: 6px solid #b2cae9;
+    width: 50rem;
+    height: 1.6rem;
+    border-radius: .3rem .3rem 0 0;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8.7rem;
+}
+
+.action img {
+    position: absolute;
+    width: 1.5rem;
+    top: .2rem;
+}
+
+.action span {
+    position: relative;
+    left: 1.5rem;
+    font-weight: 500;
+    top: .3rem;
+}
+
+.action .btns {
+    display: inline-block;
+    position: relative;
+    left: 40.5rem;
+    top: -1.3rem;
+
+}
+
+.action .btns .actionBtn {
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: .1rem;
+    border: 1px solid #7b8ca5;
+    background: #bcd1ee;
+}
+
+.action .btns .actionBtn i {
+    color: #fff;
+    background: none;
+}
+
+.action .btns #minimize,
+.action .btns #maximize {
+    background: linear-gradient(180deg, #bdd0eb, #aec3de, #bacdea);
+}
+
+.action .btns #minimize:hover {
+    background: linear-gradient(180deg, #879cba, #3472c4, #3c5a88);
+    box-shadow: 0 0 1rem #14cd61;
+}
+
+.action .btns #close {
+    background: linear-gradient(180deg, #e6b6b1, #bd5035, #d4876e);
+}
+
+.action .btns #close:hover {
+    box-shadow: 0 0 1rem #ff4500;
+}
+
+#closeAtt {
+    display: none;
+    position: absolute;
+    background: #b2cae9;
+    padding: .5rem .7rem;
+    border-radius: .2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25rem;
+    z-index: 10;
+    width: 52.3rem;
+}
+
+#closeAtt .att {
+    font-size: 2.2rem;
+}
+
+#closeAtt button {
+    position: relative;
+    left: 45%;
+    transform: translateX(-55%);
+    padding: .3rem 1.7rem;
+    border-radius: .2rem;
+    margin: .5rem;
+    top: .2rem;
+    font-size: 1.1rem;
+    background: linear-gradient(180deg, #dedede, #c1c1c3);
+    border: 1px solid #333;
+}
+
+#closeAtt button:hover {
+    background: linear-gradient(180deg, #c1c1c3, #dedede);
+    box-shadow: 0 0 .5rem #333;
+}
+
+#colInf {
+    display: none;
+    position: absolute;
+    border: 2px solid #fff;
+    width: 19%;
+    height: 1.1rem;
+    bottom: 4rem;
+    background: linear-gradient(180deg, #fff, silver, #bdbdbd);
+}
+
+#colInf #green1 {
+    display: inline-block;
+    position: relative;
+    width: 35%;
+    height: 1.1rem;
+    background: linear-gradient(180deg, lime, green, rgb(0, 181, 0));
+}
+
+#colInf span,
+#instWin span {
+    display: inline-block;
+    position: absolute;
+    color: #fff;
+    font-size: 1.6rem;
+    width: 18rem;
+    top: 2rem;
+    left: .2rem;
+}
+
+#instWin {
+    display: none;
+    position: absolute;
+    border: 2px solid #fff;
+    width: 80.5%;
+    height: 1.1rem;
+    bottom: 4rem;
+    left: 19.3%;
+    background: linear-gradient(180deg, #fff, silver, #bdbdbd);
+}
+
+#instWin #green1 {
+    display: inline-block;
+    position: relative;
+    width: 0;
+    height: 1.1rem;
+    background: linear-gradient(180deg, lime, green, rgb(0, 181, 0));
+}
+
+#instWin #green2 {
+    display: inline-block;
+    position: relative;
+    width: 0;
+    height: 1.1rem;
+    background: linear-gradient(180deg, lime, green, rgb(0, 181, 0));
+}
+
+#content {
+    position: absolute;
+    border: 6px solid #b2cae9;
+    width: 50rem;
+    height: 30rem;
+    border-radius: 0 0 .3rem .3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    background: rgba(255, 255, 255, 0.0001);
+}
+
+#content .icon {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4rem;
+}
+
+#content .icon img {
+    position: relative;
+    width: 3.5rem;
+    top: .5rem;
+    margin-right: .5rem;
+}
+
+#content .icon span {
+    color: #fff;
+    font-size: 3rem;
+}
+
+#content .MC {
+    position: absolute;
+    color: #fff;
+    top: 28rem;
+    left: 1.5rem;
+    font-size: .7rem;
+}
+
+/*              Page 1               */
+
+#content .select {
+    display: inline-block;
+    position: relative;
+}
+
+#content .first {
+    top: 8rem;
+    left: 25%;
+}
+
+#content .second {
+    left: 19%;
+    top: 9rem;
+}
+
+#content .third {
+    left: 18.4%;
+    top: 10rem;
+
+}
+
+#content .select .label {
+    color: #fff;
+}
+
+#content .select select {
+    width: 25rem;
+    padding: .3rem .1rem;
+    font-weight: 600;
+}
+
+#content .select select option {
+    font-weight: 600;
+}
+
+#content .att {
+    display: inline-block;
+    position: relative;
+    top: 13rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+
+#content #next {
+    position: relative;
+    background: linear-gradient(180deg, #dedede, #c1c1c3);
+    padding: .3rem 1.7rem;
+    border-radius: .2rem;
+    border: 1px solid #333;
+    top: 15rem;
+    left: 12rem;
+}
+
+#content #next:hover {
+    background: linear-gradient(180deg, #c1c1c3, #dedede);
+    box-shadow: 0 0 .5rem #666;
+}
+
+/*              Page 2              */
+
+
+#content #install {
+    display: none;
+    position: absolute;
+    top: 13rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: .6rem 2rem;
+    border: 1px solid #5f4e89;
+    background: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#content #black {
+    display: none;
+    position: absolute;
+    background: #000;
+    width: 96rem;
+    height: 54rem;
+    z-index: 1000;
+    left: -23rem;
+    top: -11.15rem;
+    cursor: wait;
+}
+
+#content #black .txt {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    font-size: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 90%;
+}
+
+/*              Page 3               */
+
+#content #actTxt {
+    display: none;
+    position: relative;
+    color: #386ac7;
+    font-size: 1.2rem;
+    font-weight: 400;
+    left: 4rem;
+    top: 1.8rem;
+}
+
+#content #actCode {
+    display: none;
+    position: relative;
+    color: #000;
+    left: 49%;
+    transform: translateX(-51%);
+    top: 3rem;
+    font-weight: 500;
+}
+
+#content #actCodeInp {
+    display: none;
+    position: absolute;
+    border: 1px solid #666;
+    border-bottom: 5px solid #5091d3;
+    border-radius: .3rem;
+    padding: .2rem .4rem;
+    width: 14rem;
+    left: 4rem;
+    top: 20rem;
+    font-size: .92rem;
+}
+
+#content #DHC {
+    display: none;
+    position: relative;
+    color: #478dd3;
+    top: 12rem;
+    left: 50%;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#content #DHC:hover {
+    color: #1f558b;
+}
+
+#content #next2 {
+    display: none;
+    position: absolute;
+    background: linear-gradient(180deg, #dedede, #c1c1c3);
+    padding: .3rem 1.7rem;
+    border-radius: .2rem;
+    border: 1px solid #333;
+    left: 43rem;
+    top: 27rem;
+}
+
+#content #next2:hover {
+    background: linear-gradient(180deg, #c1c1c3, #dedede);
+    box-shadow: 0 0 .5rem #666;
+}
+
+/*              Page 4               */
+
+#content #selTxt {
+    display: none;
+    position: absolute;
+    color: #386ac7;
+    left: 3.6rem;
+    top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#content #selVer {
+    display: none;
+    position: absolute;
+    border: 1px solid #000;
+    width: 43rem;
+    height: 15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4rem;
+}
+
+#content #selVer .infVer {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: .3rem;
+}
+
+#content #selVer .ver {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: .3rem;
+    cursor: pointer;
+    margin-top: .2rem;
+    padding: .2rem .4rem;
+}
+
+#content #selVer .ver:last-child {
+    left: 50%;
+    transform: translateX(-49.8%);
+}
+
+#content #selVer .ver.active {
+    background: #000774;
+    color: #fff;
+}
+
+#content .des,
+#content #desValue {
+    display: none;
+    position: absolute;
+    top: 19rem;
+    left: 3.5rem;
+    font-weight: 500;
+}
+
+#content #desValue {
+    top: 20rem;
+    margin-top: .3rem;
+}
+
+#content #next3 {
+    display: none;
+    position: absolute;
+    background: linear-gradient(180deg, #dedede, #c1c1c3);
+    padding: .3rem 1.7rem;
+    border-radius: .2rem;
+    border: 1px solid #333;
+    left: 43rem;
+    top: 27rem;
+}
+
+#content #next3:hover {
+    background: linear-gradient(180deg, #c1c1c3, #dedede);
+    box-shadow: 0 0 .5rem #666;
+}
+
+/*              Page 5               */
+
+#content #insType {
+    display: none;
+    position: absolute;
+    color: #386ac7;
+    left: 3.6rem;
+    top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#content #types {
+    display: none;
+    position: absolute;
+    left: 3.6rem;
+}
+
+#content #types #active {
+    display: inline-block;
+    position: absolute;
+    border: 3px solid #7a7a7a;
+    width: 730px;
+    height: 100px;
+    top: 2.5rem;
+    left: -1rem;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#content #types #active.active1 {
+    margin-top: 7.3rem;
+    height: 120px;
+}
+
+#content #types .type {
+    display: inline-block;
+    position: relative;
+    top: 2rem;
+    left: -.8rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+#content #types .type .upgrade {
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1c72ce;
+    bottom: .5rem;
+}
+
+#content #types .type .custom {
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1c72ce;
+    bottom: .5rem;
+}
+
+#content #types .type .tell {
+    color: #5184c3;
+    font-weight: 500;
+}
+
+/*              Page 6               */
+
+
+#content #insWin {
+    display: none;
+    position: absolute;
+    color: #386ac7;
+    left: 3.6rem;
+    top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#content #diskMgr {
+    display: none;
+    position: absolute;
+    border: 2px solid #d2d2d2;
+    width: 43rem;
+    height: 15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4rem;
+}
+
+#content #diskMgr .disk {
+    display: inline-block;
+    position: relative;
+    background: #aee0ff;
+    border: 2px solid #bcdbe7;
+    border-radius: .1rem;
+    padding: .4rem .1rem;
+    width: 42rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: .8rem;
+}
+
+#content #diskMgr .disk img {
+    display: inline-block;
+    position: absolute;
+    width: 1.9rem;
+}
+
+#content #diskMgr .disk pre {
+    display: inline-block;
+    position: relative;
+    left: 3rem;
+    font-weight: 500;
+}
+
+#content #actions {
+    display: none;
+    position: absolute;
+    width: 30rem;
+    left: 3.7rem;
+    top: 20rem;
+    cursor: pointer;
+}
+
+#content #next4 {
+    display: none;
+    position: absolute;
+    background: linear-gradient(180deg, #dedede, #c1c1c3);
+    padding: .3rem 1.7rem;
+    border-radius: .2rem;
+    border: 1px solid #333;
+    left: 43rem;
+    top: 27rem;
+}
+
+#content #next4:hover {
+    background: linear-gradient(180deg, #c1c1c3, #dedede);
+    box-shadow: 0 0 .5rem #666;
+}
+
+/*              Page 7               */
+
+#content #instWindows {
+    display: none;
+    position: absolute;
+    color: #386ac7;
+    left: 3.6rem;
+    top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+#content #status {
+    display: none;
+    position: absolute;
+    left: 3.6rem;
+    top: 4rem;
+    font-weight: 500;
+}
+
+#content #process {
+    display: none;
+    position: absolute;
+    left: 4.5rem;
+    top: 7rem;
+}
+
+#content #process img {
+    display: none;
+    position: absolute;
+    width: 1.5rem;
+    margin-top: .3rem;
+    left: -1.7rem;
+}
+
+#content #process div {
+    margin-top: .5rem;
+    transition: none;
+}
+
+#content #process div.active {
+    font-weight: 700;
+}
+
+#content #process div span {
+    display: none;
+}
+
+#content #process div.active span {
+    display: inline-block;
+}
